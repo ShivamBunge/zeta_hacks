@@ -1,3 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+
+/*pre loading animations*/
 .loader {
     position: fixed;
     z-index: 99;
@@ -29,114 +46,106 @@
 }
 
 
-/* slideshow behind homepage*/
-.cb-slideshow,
-.cb-slideshow:after { 
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    z-index: 0; 
+/*carousal and sections*/
+.button1{
+    margin:0px 400px;
+    font-size: 27px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
 }
-.cb-slideshow:after { 
-    content: '';
-    background: transparent url(../images/pattern.png) repeat top left; 
-}
-
-.cb-slideshow li span { 
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    color: transparent;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: none;
-    opacity: 0;
-    z-index: 0;
-    animation: imageAnimation 36s linear infinite 0s; 
-}
-.cb-slideshow li div { 
-    z-index: 1000;
-    position: absolute;
-    bottom: 30px;
-    left: 0px;
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-    color: #fff;
-    animation: titleAnimation 36s linear infinite 0s; 
-}
-.cb-slideshow li div h3 { 
-    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
-    font-size: 80px;
-    padding: 0;
-    line-height: 200px; 
+@media only screen and (max-width : 620px) {
+    .button1{
+        margin:0px 0px;
+    }
 }
 
-.cb-slideshow li:nth-child(1) span { 
-    background-image: url(f2.jpg) 
+.button1:hover{
+    color: white;
+    text-decoration: none;   
+
 }
-.cb-slideshow li:nth-child(2) span { 
-    background-image: url(f3.jpg);
-    animation-delay: 6s; 
+.button {
+    background-color: black;
+    color: white;
+    font-size: 20px;;
+    padding: 5px;
+    width: 200px;
+    border-radius: 8px;
 }
-.cb-slideshow li:nth-child(3) span { 
-    background-image: url(f4.jpg);
-    animation-delay: 12s; 
+.button:hover{
+    color:cornsilk;
+    background-color: #480032;
+    text-decoration: none;
+
 }
-.cb-slideshow li:nth-child(4) span { 
-    background-image: url(f5.jpg);
-    animation-delay: 18s; 
+.space{
+    height: 30px;
 }
-.cb-slideshow li:nth-child(5) span { 
-    background-image: url(f6.jpg);
-    animation-delay: 24s; 
-}
-.cb-slideshow li:nth-child(6) span { 
-    background-image: url(../images/6.jpg);
-    animation-delay: 30s; 
+.carousel-item {
+    height: 65vh;
+    min-height: 600px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover
 }
 
-.cb-slideshow li:nth-child(2) div { 
-    animation-delay: 6s; 
+#mainNavbar {
+    padding-left: 20px;
+    padding-top: 20px
 }
-.cb-slideshow li:nth-child(3) div { 
-    animation-delay: 12s; 
+.container1{
+    margin:5px 100px;
+    background-color:#E5FBB8;
+    color: black;
+    padding: 8px 15px;
 }
-.cb-slideshow li:nth-child(4) div { 
-    animation-delay: 18s; 
-}
-.cb-slideshow li:nth-child(5) div { 
-    animation-delay: 24s; 
-}
-.cb-slideshow li:nth-child(6) div { 
-    animation-delay: 30s; 
-}
-@keyframes imageAnimation { 
-    0% { opacity: 0; animation-timing-function: ease-in; }
-    8% { opacity: 1; animation-timing-function: ease-out; }
-    17% { opacity: 1 }
-    25% { opacity: 0 }
-    100% { opacity: 0 }
-}
-@keyframes titleAnimation { 
-    0% { opacity: 0 }
-    8% { opacity: 1 }
-    17% { opacity: 1 }
-    19% { opacity: 0 }
-    100% { opacity: 0 }
-}
-.no-cssanimations .cb-slideshow li span{
-	opacity: 1;
-}
-@media screen and (max-width: 1140px) { 
-    .cb-slideshow li div h3 { font-size: 140px }
-}
-@media screen and (max-width: 600px) { 
-    .cb-slideshow li div h3 { font-size: 80px }
+.container2{
+    margin:5px 100px;
+    background-color:#E5FBB8;
+    color: black;
+    padding: 8px 15px;
 }
 
 
+.navbar-dark .navbar-brand {
+    font-family:  serif;
+}
+
+.navbar-nav .nav-link {
+    font-family:  serif;
+}
+
+.display-4 {
+    font-family:  serif;
+}
+
+.lead {
+    font-family:  serif;
+    font-size: 22px;
+}
+
+.navbar.scrolled {
+    background: rgb(34, 31, 31);
+    transition:ease-in-out 500ms;
+    
+}
+.lead1{
+    font-family:  serif;
+    font-size: 40px;
+}
+.body{
+    background-color: #FFF5AB;
+}
+
+.font-weight-light {
+    color:black;
+    font-size:30px;
+    font-family:  serif;
+    font-weight: 900;
+    
+    
+}
