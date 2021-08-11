@@ -74,7 +74,7 @@ html{
     width: 200px;
     border-radius: 8px;
 }
-.button:hover{
+.button1:hover, .button:hover{
     color:cornsilk;
     background-color: #480032;
     text-decoration: none;
@@ -85,7 +85,7 @@ html{
 }
 .carousel-item {
     height: 65vh;
-    min-height: 600px;
+    min-height: 630px;
     background: no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
