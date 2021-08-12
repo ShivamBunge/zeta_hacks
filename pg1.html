@@ -1,13 +1,161 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="styles.css">
-    <title>Zeta</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    <title>Document--ishwar</title>
+    <style>
+        .container{
+            margin: 0;
+            background-image: url(t2.png);
+            height: 1200px;
+        }
+        .wrapper{ opacity:0.8;width: 500px; margin: 50px auto; padding: 20px; background: white; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black; }
+
+
+        /*content*/
+        a{
+            text-decoration: none;
+    color:rgb(240, 240, 240);
+}
+a:hover{
+    color:chartreuse;
+    text-decoration: none;
+}
+
+
+
+li{
+    text-align: left;
+}
+
+.hd{
+    display: none;
+}
+
+
+
+img{
+    height:250px;
+    margin-top: 10px;
+    padding-top: 20px;
+    
+}
+
+a:hover{
+    color: rgb(2, 85, 16);
+    /* font-size:large; */
+}
+
+.name:hover +.hd {
+    height: min-content;
+    display: grid;
+}
+.cursive{
+    color: black;
+    font-weight: 600;
+    /* font-family: 'Kaushan Script', cursive; */
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: 25px;
+}
+.cursive1{
+    color: black;
+    font-weight: 700;
+    font-family: 'Kaushan Script', cursive; 
+    /* font-family: 'Nothing You Could Do', cursive; */
+    font-size: 25px;
+}
+
+.hd{
+    display: none;
+}
+.open_button:hover +.hd{
+    height: min-content;
+    display: grid;
+ 
+}    
+.normal{
+    font-size:22px;
+    color: black;
+    font-weight: 600;
+    font-family: serif;
+
+}
+</style>
 </head>
+
 <body>
-    <div class="loader hidden">
-        <h1>After 1 year</h1>
+    <div class="container"> <!--background image-->
+        <div class="wrapper"><!--text box semi transparent-->
+            <h3 class="cursive">You have just graduated from your college and depending upon your profession you are
+                working for a company/ organisation or may be in a clinic if you are a doctor.... </h3> <br>
+            <h3 class="cursive1"> You start your new phase of life with full enthusiasm..</h3><br>
+            <h3 class="normal">
+                <ul>            
+                <div class="open_button cursive">Here are your salary details</div>            
+                    <div class="hd">                        
+                        <li>Basic &nbsp &nbsp +Rs 45000 </li>
+                        <li>HRA &nbsp &nbsp +Rs 5000</li>
+                        <li>DA &nbsp &nbsp +Rs 500</li>
+                        <li>Providend Fund &nbsp -Rs 5000</li>
+                        <li>Professional Tax &nbsp -Rs 4500</li>
+                        <li>Loan &nbsp&nbsp Rs 000</li> 
+                        <li>Total &nbsp&nbsp Rs 41000</li>                   
+                    </div> 
+                    </ul>
+            </h3>   <br>
+            <h3 class="cursive1">You have many plans and goals for yourself and your family but you have monthly expenses
+                as well</h3> <br>
+            <ul><h3 class="normal">                
+            <div class="open_button cursive">Here is the list of your monthly expenses</div>
+            <div class="hd">                        
+                <li>Basic &nbsp &nbsp +Rs 45000 </li>
+                <li>HRA &nbsp &nbsp +Rs 5000</li>
+                <li>DA &nbsp &nbsp +Rs 500</li>
+                <li>Providend Fund &nbsp -Rs 5000</li>
+                <li>Professional Tax &nbsp -Rs 4500</li>
+                <li>Loan &nbsp&nbsp Rs 000</li> 
+                <li>Total &nbsp&nbsp Rs 41000</li>                   
+            </div></h3> 
+            </ul>  <br>
+            <h3 class="cursive1">Overall you have Rs 15000 in your hands, but you are confused as to whether you should invest it</h3>        
+            <br><ul><h3 class="normal">                
+                <div class=" cursive">Here are the following options</div>
+                <div class="">                        
+                    <li>Stocks </li>
+                    <li>Mutual Funds</li>
+                    <li>Fixed Deposits</li>
+                    <li>Recurring Deposits</li>
+                    <li>Gold</li>
+                    <li>Bank balance and in stocks</li> 
+                    <li>I would borrow some money to buy a bike for myself</li>                   
+                </div></h3> 
+                </ul>
+
+                <div class="text-center ">
+                    <h3 class="normal">
+                    <button type="button" class="open_button btn btn-dark"><a href="Investment.html">Take Advice</a></button>
+                        <div class="hd">                        
+                            <li>What are Stocks and Stock Market? </li>
+                            <li>What are Mutual Funds?</li>
+                            <li>What are Fixed Deposits?</li>
+                            <li>What are Recurring Deposits?</li>
+                            <li>Investing in Gold</li>            
+                        </div>
+                    </h3> 
+                </div><br><br>
+                <div class="text-center ">
+                <button type="button" class="btn btn-dark"><a href="pg2.html">NEXT</a></button>
+                </div>
+
+        </div>
     </div>
-    <h1>Page 1 </h1>
-    <a href="pg2.html">NEXT</a>
+    
 </body>
-</html
+</html>
