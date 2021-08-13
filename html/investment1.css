@@ -11,6 +11,8 @@
 
 body{
    background-color: #f3f5f9;
+   color: rgb(26, 161, 13);
+   text-align: center;
 }
 
 .wrapper{
@@ -65,21 +67,26 @@ body{
 
 .wrapper .main_content .header{
   padding: 20px;
-  background: #fff;
-  color: #717171;
+  background: rgb(250, 246, 246);
+  color: #4083e9;
   border-bottom: 1px solid #e0e4e8;
+}
+
+.wrapper .main_content .header:hover h1{
+  border-bottom: 1px solid #4083e9 ;
 }
 
 
 .wrapper .main_content .info{
-  margin: 20px;
-  color: #717171;
+  margin: 50px;
+  color: #f8c9c9;
   line-height: 25px;
 }
 
 .wrapper .main_content .info div{
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
+
 
 
 }
