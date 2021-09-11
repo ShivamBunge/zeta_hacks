@@ -51,6 +51,11 @@ def register(request):
 def index(request):
     return render(request,'index.html')
 
+def start(request):
+    if (request.user.is_authenticated):
+        return render(request,"pg0.html")
+    else:
+        return redirect("login")
 
 def logout(request):
     auth.logout(request)

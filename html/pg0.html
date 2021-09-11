@@ -1,4 +1,4 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +10,7 @@
 		* { margin: 0; padding: 0; }
 		
 		html { 
-			background: url('img/t3.png') no-repeat center center fixed; 
+			background: url("{% static 'img/t3.png' %}") no-repeat center center fixed; 
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
 			-o-background-size: cover;
@@ -99,12 +99,12 @@ a:hover{
             <div class="pro">
                 
                     <div class="img">
-                        <img src="img/DR-removebg-preview.png" alt="Doctor">
+                        <img src="{% static 'img/DR-removebg-preview.png' %}" alt="Doctor">
                     </div>
                     <div class="pro-info">
                         <p>
                         <ul>
-                            <div class="name" id="dr"><a href="pg1-dr.html"><h2>Doctor</h2></a></div>
+                            <div class="name" id="dr"><a href="{% static 'pg1-dr.html' %}"><h2>Doctor</h2></a></div>
                             <div class="hd">
                                 <li>The primary duty of all doctors is for the care and safety of patients.</li>
                                 <li>Avg income= approx. 1-2 lakh/month</li>
@@ -121,11 +121,11 @@ a:hover{
 	<div class="item">
 		<div class="pro">
 			<div class="img">
-				<img src="img/eng.PNG" alt="engineer">
+				<img src="{% static 'img/eng.PNG' %}" alt="engineer">
 			</div>
 			<div class="pro-info">
 				<ul>
-					<div class="name"><a href="pg1-eng.html"><h2>Engineer</h2></a></div>
+					<div class="name"><a href="{% static 'pg1-eng.html' %}"><h2>Engineer</h2></a></div>
 					<div class="hd">
 						<li>A person who designs, builds, or maintains engines, machines, or structures.</li>
 						<li>Avg salary= 60-70k/month</li>
@@ -141,11 +141,11 @@ a:hover{
 	<div class="item">
 		<div class="pro">
 			<div class="img">
-				<img src="img/businessman-removebg-preview.png" alt="businessman">
+				<img src="{% static 'img/businessman-removebg-preview.png' %}" alt="businessman">
 			</div>
 			<div class="pro-info">
 				<ul>
-					<div class="name"><a href="pg1-busi.html"><h2>Businessman</h2></a></div>
+					<div class="name"><a href="{% static 'pg1-busi.html' %}"><h2>Businessman</h2></a></div>
 					<div class="hd">
 						<li>
 							A man who is skilful at dealing with money
@@ -163,11 +163,11 @@ a:hover{
 	<div class="item"><!--content-->
 		<div class="pro">
 			<div class="img">
-				<img src="img/pol-removebg-preview.png" alt="police">
+				<img src="{% static 'img/pol-removebg-preview.png' %}" alt="police">
 			</div>
 			<div class="pro-info">
 				<ul>
-					<div class="name"><a href="pg1-pol.html"><h2>Police</h2></a></div>
+					<div class="name"><a href="{% static 'pg1-pol.html' %}"><h2>Police</h2></a></div>
 					<div class="hd">
 						<li>Job is to enforce laws, solve crimes and protect property</li>
 						<li>Avg salary= 30-35k/month</li>
@@ -233,7 +233,7 @@ a:hover{
 		border-radius: 0;
 		bottom: auto;
 		margin: 0;
-		background: url(/images/examples-logo.png) no-repeat;
+		background: url("{% static '/images/examples-logo.png' %}") no-repeat;
 		background-size: 100%;
 		overflow: hidden;
 		text-indent: -9999px;
