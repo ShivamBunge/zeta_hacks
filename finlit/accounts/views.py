@@ -1,8 +1,11 @@
+from profession.models import portfolio
+from profession.models import Profession
 from django.contrib.messages.api import error
 from django.core.checks import messages
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User, auth
 from django.contrib import messages 
+from .models import Profile
 # Create your views here.
 
 
@@ -14,6 +17,9 @@ def login(request):
         user = auth.authenticate(username=username,password=password)
 
         if user is not None:
+            auth.login(request,user)
+            return redirect("/")
+        elif user is super:
             auth.login(request,user)
             return redirect("/")
         else:
@@ -53,10 +59,36 @@ def index(request):
 
 def start(request):
     if (request.user.is_authenticated):
-        return render(request,"pg0.html")
+        profs = Profession.objects.all()
+        return render(request,"pg0.html",{'profs':profs})
     else:
         return redirect("login")
 
 def logout(request):
     auth.logout(request)
     return redirect("/")
+
+def prof_ch(request):
+    player = Profile.objects.get(user__id=request.user.id)
+    if request.method=="POST":
+        choice=request.POST['select']
+        player.current_job=choice
+        player.save()
+        jobs=portfolio.objects.filter(prtf_name=choice)
+        # print(player.current_job)
+        if choice=="Doctor":
+            return render(request,"pg1-dr.html",{"jobs":jobs})
+        elif choice=="Businessman":
+            return render(request,"pg1-busi.html")
+        elif choice=="Engineer":
+            return render(request,"pg1-eng.html")
+        elif choice=="Police":
+            return render(request,"pg1-pol.html",{"jobs":jobs})
+    else:
+        redirect("start")
+
+def update_val(request):
+    # job=Profession.objects.filter()
+    print(job)
+    if request.method=="POST":
+        return redirect("/")

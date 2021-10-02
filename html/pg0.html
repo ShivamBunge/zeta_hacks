@@ -62,7 +62,7 @@ li{
     display: none;
 }
 img{
-    height:250px;
+    height:200px;
     margin-top: 10px;
     padding-top: 20px;
     
@@ -95,21 +95,29 @@ a:hover{
 <div id="page-wrap">
 	<h1>Choose Your Profession</h1>
     <div class="container">
+		{% for prof in profs %}
         <div class="item">
             <div class="pro">
                 
                     <div class="img">
-                        <img src="{% static 'img/DR-removebg-preview.png' %}" alt="Doctor">
+                        <img src="{{prof.prof_img.url}}" alt="Profession Image">
                     </div>
                     <div class="pro-info">
                         <p>
                         <ul>
-                            <div class="name" id="dr"><a href="{% static 'pg1-dr.html' %}"><h2>Doctor</h2></a></div>
+                            <div class="name" id="dr">
+								<form action="start/prof_ch" method="POST">
+									{% csrf_token %}
+									<input hidden type="text" name="select" value="{{prof.prof_name}}">
+									<input type="submit" value="{{prof.prof_name}}">
+									<!-- <a href="start/prof_ch"><h2>{{prof.prof_name}}</h2></a> -->
+								</form>
+							</div>
                             <div class="hd">
-                                <li>The primary duty of all doctors is for the care and safety of patients.</li>
-                                <li>Avg income= approx. 1-2 lakh/month</li>
-                                <li>Avg expenditure= 40-50k</li>
-                                <li>Financial Risk Criteria= Very Low</li>
+                                <li>{{prof.prof_desc}}</li>
+                                <li>Avg income= approx.{{prof.income}}/month</li>
+                                <li>Avg expenditure= {{prof.expend}}</li>
+                                <li>Financial Risk Possibility= {{prof.risk}}</li>
                                 <li>Progress Speed = Medium</li>
                             </div>
                         </ul>
@@ -118,7 +126,8 @@ a:hover{
                     </div>
             </div>
         </div>
-	<div class="item">
+		{% endfor %}
+	<!-- <div class="item">
 		<div class="pro">
 			<div class="img">
 				<img src="{% static 'img/eng.PNG' %}" alt="engineer">
@@ -159,8 +168,8 @@ a:hover{
 				</ul>
 			</div>
 		</div>
-	</div>
-	<div class="item"><!--content-->
+	</div> -->
+	<!-- <div class="item">content
 		<div class="pro">
 			<div class="img">
 				<img src="{% static 'img/pol-removebg-preview.png' %}" alt="police">
@@ -178,7 +187,7 @@ a:hover{
 				</ul>
 			</div>
 		</div>
-	</div>
+	</div> -->
 </div>
 <style type="text/css" style="display: none !important;">
 	* {
