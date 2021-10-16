@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'finlit.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'finlit_new',
+        'NAME': 'finlit',
         'USER':'root',
         'PASSWORD':'Atharva@123',
         'HOST':'localhost'

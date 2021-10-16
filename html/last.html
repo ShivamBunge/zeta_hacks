@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,14 +50,16 @@
         
         body{
             margin-left:5%;
+            display: flex;
+            justify-content: center;
         }
         .container{
             margin: 0;
-            background-image: url(img/img-6.png);
+            background-image: url("{% static 'img/img-6.png' %}");
             background-repeat: no-repeat;
             height: 1200px;
         }
-        .wrapper{ opacity:0.6;height:1000px;width: 550px; margin: 50px auto; padding: 20px; background: #f5eca8; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black; }
+        .wrapper{ opacity:0.6;height:max-content;width: 550px; margin: 50px auto; padding: 20px; background: #f5eca8; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black; }
 
 
         /*content*/
