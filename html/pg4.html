@@ -225,10 +225,10 @@
                 &nbsp &nbsp &nbsp &nbsp &nbspIf you relocated your job you will have extra expences in the form of rent,
                 so you hold back to your old organization
             </div> <br><br>
-
-            <h4 class="cursive1 green">On a monthly basis you are able to save 30k to 35k monthly. so you may plan to
+            {% for save in mon_save %}
+                <h4 class="cursive1 green">On a monthly basis you are able to save {{save}} monthly. so you may plan to
                 buy a stock with SIP</h4>
-
+            {% endfor %}
 
             <div class="text-center">
                 <button type="button" class="ta open_button btn btn-dark"><a href="Investment.html#basic">What is

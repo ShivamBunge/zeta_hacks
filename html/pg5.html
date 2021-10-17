@@ -263,9 +263,10 @@
                 </div>
 
             </div><br>
-
-            <h3 class="cursive1 green">This year on monthly basis you save 35k-40k.
-            </h3> <br>
+            {% for save in mon_save %}
+                <h3 class="cursive1 green">This year on monthly basis you save {{save}}.</h3>
+            {% endfor %}
+            <br>
 
             <div class="text-center">
                 <form action="withdraw" method="POST">

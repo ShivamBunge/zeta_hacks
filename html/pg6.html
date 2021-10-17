@@ -192,7 +192,9 @@ h1{
                     </h3> 
                     </div>
                 </h3>   <br>
-            <h3 class="cursive1 green">You manage to save 40k-45k per month </h3>
+            {% for save in mon_save %}    
+                <h3 class="cursive1 green">You manage to save {{save}} per month </h3>
+            {% endfor %}
              <br>
             <h3 class="cursive1 blue">With enough cash in your bank account and healthy investments, you finally decide to buy a car for yourself without borrowing. You manage the money by selling a part of your stocks.</h3> <br>
    

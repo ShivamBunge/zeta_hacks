@@ -217,7 +217,16 @@ def confirm_inv(request):
         prtf.balance -= 150000   #grandfather hospital expenses
         prtf.balance -=65000    #house renovate
         prtf.balance -= 80000 #tax
-        
+
+        #----------Monthly saving----------------
+        mon_save=0
+        mon_save=member.prof.income * 12
+        mon_save -=member.prof.expend *12
+        mon_save -= 150000   #grandfather hospital expenses
+        mon_save -=65000    #house renovate
+        mon_save -= 80000   #tax
+        mon_save_list = [mon_save//12]
+        # -----------------------------------------
         prtf.stocks += int(stck)
         prtf.mutual_funds += int(mf)
         prtf.fds += int(fd)
@@ -236,7 +245,7 @@ def confirm_inv(request):
         prtf.pg_no=3
 
         prtf.save()
-        return render(request,"pg3.html",{"prtf":prtf,"member":member.prof})
+        return render(request,"pg3.html",{"prtf":prtf,"member":member.prof,"mon_save":mon_save_list})
     elif prtf.pg_no==3:
 
         prtf.balance += member.prof.income * 12
@@ -245,6 +254,15 @@ def confirm_inv(request):
         prtf.balance -= int(stck)+int(mf)+int(fd)+int(gold)
         prtf.balance -= 120000 # wedding
         prtf.balance -= 80000 #tax
+
+        #----------Monthly saving----------------
+        mon_save=0
+        mon_save=member.prof.income * 12
+        mon_save -=member.prof.expend *12
+        mon_save -= 120000   #wedding
+        mon_save -= 80000   #tax
+        mon_save_list = [mon_save//12]
+        # -----------------------------------------
 
         prtf.stocks += int(stck)
         prtf.mutual_funds += int(mf)
@@ -263,7 +281,7 @@ def confirm_inv(request):
         networth= [prtf.balance + prtf. total_prtf_val]
         prtf.pg_no = 4
         prtf.save()
-        return render(request,"pg4.html",{"prtf":prtf,"member":member.prof,"nw":networth})
+        return render(request,"pg4.html",{"prtf":prtf,"member":member.prof,"nw":networth,"mon_save":mon_save_list})
     elif prtf.pg_no==4:
 
         prtf.balance += member.prof.income * 12
@@ -271,6 +289,14 @@ def confirm_inv(request):
 
         prtf.balance -= int(stck)+int(mf)+int(fd)+int(gold)
         prtf.balance -= 80000 #tax
+
+        #----------Monthly saving----------------
+        mon_save=0
+        mon_save=member.prof.income * 12
+        mon_save -=member.prof.expend *12
+        mon_save -= 80000   #tax
+        mon_save_list = [mon_save//12]
+        # -----------------------------------------
 
         prtf.stocks += int(stck)
         prtf.mutual_funds += int(mf)
@@ -288,7 +314,7 @@ def confirm_inv(request):
         prtf.total_prtf_val = prtf.stocks + prtf.mutual_funds + prtf.fds + prtf.gold
         prtf.pg_no = 5
         prtf.save()
-        return render(request,"pg5.html",{"prtf":prtf,"member":member.prof})
+        return render(request,"pg5.html",{"prtf":prtf,"member":member.prof,"mon_save":mon_save_list})
     elif prtf.pg_no==5:
 
         prtf.balance += member.prof.income * 12
@@ -296,6 +322,14 @@ def confirm_inv(request):
 
         prtf.balance -= int(stck)+int(mf)+int(fd)+int(gold)
         prtf.balance -= 90000 #tax
+
+        #----------Monthly saving----------------
+        mon_save=0
+        mon_save=member.prof.income * 12
+        mon_save -=member.prof.expend *12
+        mon_save -= 90000   #tax
+        mon_save_list = [mon_save//12]
+        # -----------------------------------------
 
         prtf.stocks += int(stck)
         prtf.mutual_funds += int(mf)
@@ -312,6 +346,6 @@ def confirm_inv(request):
         prtf.total_prtf_val = prtf.stocks + prtf.mutual_funds + prtf.fds + prtf.gold
         prtf.pg_no = 6
         prtf.save()
-        return render(request,"pg6.html",{"prtf":prtf,"member":member.prof})
+        return render(request,"pg6.html",{"prtf":prtf,"member":member.prof,"mon_save":mon_save_list})
     elif prtf.pg_no==6:
-        return render(request,"last.html")
+        return render(request,"last.html",{"prtf":prtf,"member":member.prof})
