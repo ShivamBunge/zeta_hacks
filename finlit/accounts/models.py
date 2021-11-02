@@ -40,7 +40,7 @@ class portfolio(models.Model):
     loans=models.IntegerField(default=100)
 
     pg_no=models.IntegerField(default=0)
-    total_prtf_val=models.IntegerField()
+    total_prtf_val=models.IntegerField(default=0)
     
     balance=models.IntegerField(default=100)
     prtf_name=models.CharField(max_length=30)

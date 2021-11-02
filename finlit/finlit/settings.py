@@ -56,7 +56,7 @@ ROOT_URLCONF = 'finlit.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join("G:/Zeta-Hacks/zeta_hacks","html")],
+        'DIRS': [os.path.join(BASE_DIR,"html")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,11 +77,8 @@ WSGI_APPLICATION = 'finlit.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'finlit',
-        'USER':'root',
-        'PASSWORD':'Atharva@123',
-        'HOST':'localhost'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 

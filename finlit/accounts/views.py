@@ -93,8 +93,6 @@ def prof_ch(request):
         prtf.gold = 100
 
         prtf.total_prtf_val = int(prtf.stocks)+int(prtf.mutual_funds)+int(prtf.fds)+int(prtf.gold)
-        prtf.balance = member.prof.income - member.prof.expend
-        prtf.pg_no = 1
             
         prtf.save()
 
@@ -103,19 +101,31 @@ def prof_ch(request):
             # member.prof.income=200000
             member.save()
             # Previous position of prtf line
+            prtf.balance = member.prof.income - member.prof.expend
+            prtf.pg_no = 1
+            prtf.save()
             # Previous position of prtf changes and save
             return render(request, "pg1-dr.html", {"prtf": prtf, "member": member.prof})
         elif choice == "Businessman":
             member.prof = Profession.objects.get(prof_name=choice)
             member.save()
+            prtf.balance = member.prof.income - member.prof.expend
+            prtf.pg_no = 1
+            prtf.save()
             return render(request, "pg1-busi.html")
         elif choice == "Engineer":
             member.prof = Profession.objects.get(prof_name=choice)
             member.save()
+            prtf.balance = member.prof.income - member.prof.expend
+            prtf.pg_no = 1
+            prtf.save()
             return render(request, "pg1-eng.html")
         elif choice == "Police":
             member.prof = Profession.objects.get(prof_name=choice)
             member.save()
+            prtf.balance = member.prof.income - member.prof.expend
+            prtf.pg_no = 1
+            prtf.save()
             return render(request, "pg1-pol.html")
     # elif request.method=="GET":
     #     return
