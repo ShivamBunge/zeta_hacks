@@ -88,7 +88,12 @@
             text-decoration: none;
         }
 
-
+        .but{
+            background-color: #F21170;
+            font-size: 20px;
+            padding: 8px;
+            border-radius: 10px;
+        }
 
         li {
             text-align: left;
@@ -174,8 +179,8 @@
         }
 
         .ta {
-            /* background-color: #04009A; */
-            background-color: #F21170;
+             background-color: #04009A; 
+        
             font-size: 20px;
             padding: 8px;
             border-radius: 10px;
@@ -248,7 +253,9 @@
 
                 <form action="advice" method="POST">
                     {% csrf_token %}
-                    <input type="submit" value="advice" name="advice">
+                    <!-- <input type="submit" value="advice" name="advice"> -->
+                    <button class="ta open_button btn btn-dark" type="submit">Advice</button>
+
                 </form>
 
                 <h3 class="normal options">
@@ -264,14 +271,18 @@
             <div class="text-center">
                 <form action="withdraw" method="POST">
                     {% csrf_token %}
-                    <input type="submit" value="Withdraw" name="withdraw">
+                    <!-- <input type="submit" value="Withdraw" name="withdraw"> -->
+                    <button class="but open_button btn btn-dark" type="submit">Withdraw</button>
+
                 </form>
             </div>
 
             <div class="text-center">
                 <form action="invest" method="POST">
                     {% csrf_token %}
-                    <input type="submit" value="Invest" name="invest">
+                    <!-- <input type="submit" value="Invest" name="invest"> -->
+                    <button class="but open_button btn btn-dark" type="submit">Invest</button>
+
                 </form>
             </div>
         </div>

@@ -50,7 +50,7 @@ def register(request):
             else:
                 user = User.objects.create_user(
                     username=username, password=password1, email=email, first_name=first_name, last_name=last_name)
-                user.save();
+                user.save()
                 return redirect("login")
         else:
             messages.info(request, "Password not matching.")

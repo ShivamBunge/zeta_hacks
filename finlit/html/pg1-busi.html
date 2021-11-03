@@ -90,13 +90,18 @@ a:hover{
     font-family: serif;
 
 }
-.ta{
+.ta {
     background-color: #04009A;
     font-size: 20px;
     padding: 8px;
     border-radius: 10px;
 }
-
+.but{
+    background-color: #F21170;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 10px;
+}
 .red{
     color: red;
 }
@@ -176,7 +181,9 @@ h1{
                     <h3 class="normal ">
                         <form action="prof_ch/advice" method="POST">
                             {% csrf_token %}
-                            <input type="submit" value="advice" name="advice">
+                            
+                            <button class="ta open_button btn btn-dark" type="submit">Advice</button>
+
                         </form>
                         <div class="hd options">                        
                             <li>What are Stocks and Stock Market? </li>
@@ -190,7 +197,9 @@ h1{
                 <div class="text-center">
                     <form action="prof_ch/invest" method="POST">
                         {% csrf_token %}
-                        <input type="submit" value="Invest" name="invest">
+                        
+                        <button class="but open_button btn btn-dark" type="submit">Invest</button>
+
                     </form>
                 </div>
 

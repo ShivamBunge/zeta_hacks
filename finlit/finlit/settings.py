@@ -123,7 +123,7 @@ STATIC_URL = '/static/'
 
 # --------Changes Made By Programmer-----------------------
 STATICFILES_DIRS =[
-    os.path.join("G:/Zeta-Hacks/zeta_hacks",'html')
+    os.path.join(BASE_DIR,'html')
 ]
 
 STATIC_ROOT= os.path.join(BASE_DIR,'assets')

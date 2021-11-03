@@ -114,6 +114,12 @@ a:hover{
     /* font-family: 'Nothing You Could Do', cursive; */
     font-size: 25px;
 }
+.but{
+    background-color: #F21170;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 10px;
+}
 
 .hd{
     display: none;
@@ -151,7 +157,7 @@ h1{
 }
 .ta{
     /* background-color: #04009A; */
-    background-color: #F21170;
+    background-color:#04009A;
     font-size: 20px;
     padding: 8px;
     border-radius: 10px;
@@ -214,19 +220,24 @@ h1{
                 <div class="text-center ">
                     <h3 class="normal options">
                     <button type="button" class="ta open_button btn btn-dark"><a href="Investment.html#famous">Famous People</a></button>
-                    </h3> 
+                    
+                </h3> 
                 </div><br><br>
                 <div class="text-center">
                     <form action="withdraw" method="POST">
                         {% csrf_token %}
-                        <input type="submit" value="Withdraw" name="withdraw">
+                        <!-- <input type="submit" value="Withdraw" name="withdraw"> -->
+                        <button class="but open_button btn btn-dark" type="submit">Withdraw</button>
+
                     </form>
                 </div>
     
                 <div class="text-center">
                     <form action="invest" method="POST">
                         {% csrf_token %}
-                        <input type="submit" value="Invest" name="invest">
+                        <!-- <input type="submit" value="Invest" name="invest"> -->
+                        <button class="but open_button btn btn-dark" type="submit">Invest</button>
+
                     </form>
                 </div>
 

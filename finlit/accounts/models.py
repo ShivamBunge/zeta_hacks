@@ -33,17 +33,17 @@ class portfolio(models.Model):
     #-------- DO CHANGES HERE--------------------
     # player=models.ForeignKey(Profession,on_delete=models.CASCADE)
     player=models.OneToOneField(User,on_delete=models.CASCADE)
-    stocks=models.IntegerField(default=100)
-    mutual_funds=models.IntegerField(default=100)
-    fds=models.IntegerField(default=100)
-    gold=models.IntegerField(default=100)
-    loans=models.IntegerField(default=100)
+    stocks=models.IntegerField(default=00)
+    mutual_funds=models.IntegerField(default=00)
+    fds=models.IntegerField(default=00)
+    gold=models.IntegerField(default=00)
+    loans=models.IntegerField(default=00)
 
     pg_no=models.IntegerField(default=0)
-    total_prtf_val=models.IntegerField(default=0)
+    total_prtf_val=models.IntegerField(default=00)
     
     balance=models.IntegerField(default=100)
-    prtf_name=models.CharField(max_length=30)
+    
     def __str__(self):
         return f'{self.player.username} Portfolio'
     

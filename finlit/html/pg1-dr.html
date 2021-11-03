@@ -22,7 +22,7 @@
 
         .container {
             margin: 0;
-            background-image: url({% static 'img/pg1-dr.jpg' %});
+            background-image: url("{% static 'img/pg1-dr.jpg' %}");
             height: 1200px;
         }
 
@@ -137,12 +137,17 @@
 
         .ta {
             /* background-color: #04009A; */
+            background-color: #04009A;
+            font-size: 20px;
+            padding: 8px;
+            border-radius: 10px;
+        }
+        .but{
             background-color: #F21170;
             font-size: 20px;
             padding: 8px;
             border-radius: 10px;
         }
-
         /*------------------- Overlay---------------------- */
     </style>
 </head>
@@ -213,7 +218,8 @@
                 <h3 class="normal options">
                     <form action="prof_ch/advice" method="POST">
                         {% csrf_token %}
-                        <input type="submit" value="advice" name="advice">
+                        <button class="ta open_button btn btn-dark" type="submit">Take Advice</button>
+
                     </form>
                     <div class="hd">
                         <li>What are Stocks and Stock Market? </li>
@@ -243,7 +249,9 @@
             <div class="text-center">
                 <form action="prof_ch/invest" method="POST">
                     {% csrf_token %}
-                    <input type="submit" value="Invest" name="invest">
+                    
+                    <button class="but open_button btn btn-dark" type="submit">Invest</button>
+
                 </form>
             </div>
         </div>

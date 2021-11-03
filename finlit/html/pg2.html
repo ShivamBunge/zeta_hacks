@@ -39,6 +39,7 @@
             -webkit-box-shadow: 0 0 20px black;
             box-shadow: 0 0 20px black;
         }
+       
 
 
         /*content*/
@@ -118,7 +119,12 @@
             padding: 8px;
             border-radius: 10px;
         }
-
+        .but{
+            background-color: #F21170;
+            font-size: 20px;
+            padding: 8px;
+            border-radius: 10px;
+        }
         .red {
             color: red;
         }
@@ -161,7 +167,7 @@
         }
 
         .loader.hidden {
-            animation: fadeOut 4s;
+            animation: fadeOut 2s;
             animation-fill-mode: forwards;
         }
 
@@ -230,7 +236,8 @@
             <div class="text-center ">
                 <form action="advice" method="POST">
                     {% csrf_token %}
-                    <input type="submit" value="advice" name="advice">
+                    <!-- <input type="submit" value="advice" name="advice"> -->
+                    <button class="ta open_button btn btn-dark" type="submit">Advice</button>
                 </form>
             </div>
             <br>
@@ -245,14 +252,18 @@
             <div class="text-center">
                 <form action="withdraw" method="POST">
                     {% csrf_token %}
-                    <input type="submit" value="Withdraw" name="withdraw">
+                    <!-- <input type="submit" value="Withdraw" name="withdraw"> -->
+                    <button class="but open_button btn btn-dark" type="submit">Withdraw</button>
+
                 </form>
             </div>
             <!-- ------------------------------------------------------------------------------------- -->
             <div class="text-center">
                 <form action="invest" method="POST">
                     {% csrf_token %}
-                    <input type="submit" value="Invest" name="invest">
+                    <!-- <input type="submit" value="Invest" name="invest"> -->
+                    <button class="but open_button btn btn-dark" type="submit">Invest</button>
+
                 </form>
             </div>
         </div>
