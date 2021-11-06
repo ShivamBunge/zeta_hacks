@@ -109,14 +109,15 @@ a:hover{
                     <div class="pro-info">
                         <p>
                         <ul>
-                            <div class="name" id="dr">
+                            <!-- <div class="name" id="dr"> -->
 								<form action="start/prof_ch" method="POST">
 									{% csrf_token %}
 									<input hidden type="text" name="select" value="{{prof.prof_name}}">
-									<input type="submit" value="{{prof.prof_name}}">
+									<!-- <input type="submit" value="{{prof.prof_name}}"> -->
+									<button type="submit" id="dr" class="name">{{prof.prof_name}}</button>
 									<!-- <a href="start/prof_ch"><h2>{{prof.prof_name}}</h2></a> -->
 								</form>
-							</div>
+							<!-- </div> -->
                             <div class="hd">
                                 <li>{{prof.prof_desc}}</li>
                                 <li>Avg income= approx.{{prof.income}}/month</li>
