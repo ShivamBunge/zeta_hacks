@@ -39,7 +39,7 @@
             -webkit-box-shadow: 0 0 20px black;
             box-shadow: 0 0 20px black;
         }
-       
+
 
 
         /*content*/
@@ -119,12 +119,14 @@
             padding: 8px;
             border-radius: 10px;
         }
-        .but{
+
+        .but {
             background-color: #F21170;
             font-size: 20px;
             padding: 8px;
             border-radius: 10px;
         }
+
         .red {
             color: red;
         }
@@ -184,8 +186,13 @@
             margin: 10px;
         }
 
+        .loan-opt{
+            color: rgb(49, 153, 49);
+            opacity: 0.8;
+            
+        }
+
         /*-------------Overlay------------------*/
-        
     </style>
 </head>
 
@@ -219,20 +226,24 @@
             <h3 class="cursive1">Professional tax : -Rs. 80,000 </h3><br>
 
             <div class="text-center ">
-                <button type="button" class="ta open_button btn btn-dark"><a
-                        href="{% static 'Investment.html#add' %}">How to avoid taxes?</a></button>
+                <form action="advice" method="POST">
+                    {% csrf_token %}
+                    <!-- <input type="submit" value="advice" name="advice"> -->
+                    <button class="ta open_button btn btn-dark" type="submit">How to avoid taxes ?</button>
+                </form>
             </div>
             <br>
-            <div class="open_button cursive1">Also since childhood you always wished to have your own car and a
-                beautiful house.So you:</div>
-            <div class="hd">
+            <details>
+                <summary>
+                    <div class="open_button cursive1">Also since childhood you always wished to have your own car of price approx 6 lakhs.So you can:</div>
+                </summary>
+                <p>
                 <ul class="normal">
-                    <!-- <li>Basic &nbsp &nbsp +Rs 45000 </li> -->
-                    <li>Buy a car by taking credit from the bank @10% interest p.a</li>
+                    <li>Buy a car by taking credit from the bank @10% interest p.a for next 4 years</li>
                     <li>Use all your savings</li>
                 </ul>
-                <br>
-            </div>
+                </p>
+            </details>
             <div class="text-center ">
                 <form action="advice" method="POST">
                     {% csrf_token %}
@@ -241,12 +252,8 @@
                 </form>
             </div>
             <br>
-            <h3 class="cursive blue">So you decide to buy a car now and save money and instead of getting upset you
-                plan a small trip to Goa with your parents</h3>
-            <h3 class="cursive1 green">Overall you have Rs {{prtf.balance}} in your hands and you keep on adding your
-                investments.</h3>
-
-
+            <h3 class="cursive blue">So you decide to buy a car now and fulfill your childhood dream.</h3>
+            <h3 class="cursive1 green">Overall you have Rs {{prtf.balance}} in your hands and you keep on adding your investments.</h3>
 
             <!-- ------------------------------------------------------------------- -->
             <div class="text-center">
@@ -259,9 +266,11 @@
             </div>
             <!-- ------------------------------------------------------------------------------------- -->
             <div class="text-center">
+                <h3>How you want to purchase your dream car ?:</h3>
                 <form action="invest" method="POST">
                     {% csrf_token %}
-                    <!-- <input type="submit" value="Invest" name="invest"> -->
+                    <input type="radio" name="car" value="loan">Via loan with 10% interest p.a.
+                    <input type="radio" name="car" value="savings">Via savings(then you get less amount to invest in other things like stocks,golds,etc) <br>
                     <button class="but open_button btn btn-dark" type="submit">Invest</button>
 
                 </form>

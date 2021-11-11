@@ -208,6 +208,8 @@
                         <li>Mutual Funds {{prtf.mutual_funds}} (- 12%)</li>
                         <li>Gold {{prtf.gold}} (+ 2.7%)</li>
                         <li>Bank FDs {{prtf.fds}} (+ 4.5%)</li>
+                        <li>Professional Tax &nbsp -Rs 80,000</li>
+                        <li>Car Loan &nbsp&nbsp -Rs {{prtf.loans}} </li> 
                     </div>
                 </ul>
             </h3> <br>
@@ -236,18 +238,17 @@
             {% endfor %}
 
             <div class="text-center">
-                <button type="button" class="ta open_button btn btn-dark"><a href="Investment.html#basic">What is
-                        SIP</a></button>
-                <!--<div class="hd">                        
-                        <li style="font-size: 25px; color:black; margin-left: 100px;">What is SIP</li>
-                    </div>-->
+                <form action="advice" method="POST">
+                    {% csrf_token %}
+                    <button class="ta open_button btn btn-dark" type="submit">What is SIP</button>
+                </form>
             </div><br><br>
 
             <h4 class="cursive red">There's a good new for you. Your parents have arranged marriage for your sister, so
                 you decide to contribute and spend 1.2 lakhs from your savings.
             </h4><br>
             {% for val in nw %}
-            <h4 class="cursive1 green">Meanwhile you check your networth which ia round Rs {{val}}.</h4>
+            <h4 class="cursive1 green">Meanwhile you check your networth which is around Rs {{val}}.</h4>
             {% endfor %}
             <div class="text-center ">
 
@@ -259,8 +260,10 @@
                 </form>
 
                 <h3 class="normal options">
-                    <button type="button" class="ta open_button btn btn-dark"><a href="Investment.html">What is
-                            NetWorth</a></button>
+                    <form action="advice" method="POST">
+                        {% csrf_token %}
+                        <button class="ta open_button btn btn-dark" type="submit">What is networth ?</button>
+                    </form>
                     <div class="hd cursive">
                         the total wealth of an individual, company, or household, taking account of all financial assets
                         and liabilities.

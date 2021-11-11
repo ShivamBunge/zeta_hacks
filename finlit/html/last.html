@@ -163,6 +163,9 @@ h1{
         <div class="wrapper"><!--text box semi transparent-->
             <h1>In the End!!!</h1>
             <h3 class="cursive1">Depending upon the types of investments and situations this is how your networth would be</h3>
+            {% for val in nw %}
+            <h4 class="cursive1 green">Meanwhile you check your networth which is around Rs {{val}}.</h4>
+            {% endfor %}
             <h3 class="cursive1 name green">Favourable Situation with your stocks and other investments gaining every year. </h3>
             <h3 class="hd"><ul class="normal"><li>80 lacs to 1 Crore with monthly investment around 40k-45k</li>
             <li>60 lacs to 80 lacs with monthly investment around 30k-40k</li> 

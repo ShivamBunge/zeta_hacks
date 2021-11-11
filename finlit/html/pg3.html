@@ -199,8 +199,10 @@
             <h1>Wonderful!!!</h1>
             <div class="text-center ">
                 <h3 class="normal options">
-                    <button type="button" class="ta open_button btn btn-dark"><a
-                            href="{% static 'Investment.html#basic' %}">What is Inflation ?</a></button>
+                    <form action="advice" method="POST">
+                        {% csrf_token %}
+                        <button class="ta open_button btn btn-dark" type="submit">What is inflation ?</button>
+                    </form>
                     <div class="text-center ">
                         <form action="advice" method="POST">
                             {% csrf_token %}
@@ -232,8 +234,8 @@
                         <li>Mutual {{prtf.mutual_funds}} (+25%)</li>
                         <li>Gold {{prtf.gold}} (+3%)</li>
                         <li>Bank FD's {{prtf.fds}} (+6%)</li>
-                        <!-- <li>Professional Tax &nbsp -Rs 4500</li> -->
-                        <!-- <li>Loan &nbsp&nbsp Rs 000</li>  -->
+                        <li>Professional Tax &nbsp -Rs 80,000</li>
+                        <li>Car Loan &nbsp&nbsp -Rs {{prtf.loans}} </li> 
                         <!-- <li>Total &nbsp&nbsp Rs 51000</li>                    -->
                     </div>
                 </ul>

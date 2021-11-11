@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finlit</title>
     <style>
+        body{
+            background: linear-gradient(to right, rgba(253, 253, 253, 0.959), rgb(140, 211, 233));
+        }
         .inv-container {
             width: 500px;
             margin: 50px auto;
@@ -28,8 +31,9 @@
         }
 
         #bank-bal{
-            color: rgb(235, 110, 27);
+            color: rgb(235, 27, 27);
             font-size: 30px;
+            font-family: "Lucida handwriting";
         }
 
         #submit{
@@ -43,6 +47,12 @@
         #submit:hover{
             background-color: rgb(34, 178, 65);
         }
+        label{
+            font-size: 18px;
+            font-weight: bold;
+            color: rgb(255, 76, 5);
+            font-family:verdana;
+        }
     </style>
 </head>
 
@@ -51,7 +61,7 @@
     <div class="inv-container">
         <h3 id="note">Note: You can invest upto bank balance amount</h3>
         <h3 id="bank-bal">Current Bank Balance:{{prtf.balance}} </h3>
-        <h3>Enter how much many do you want enter in repective box</h3>
+        <h3>Enter how much money do you want enter in repective box</h3>
         <div class="inv-entries">
             <form action="confirm_inv" method="POST">
                 {% csrf_token %}

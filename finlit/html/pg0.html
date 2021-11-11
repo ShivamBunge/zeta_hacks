@@ -74,24 +74,43 @@ a:hover{
 }
 .name{
     color:white;
-    padding: 4px;;
+    padding: 10px;;
     width:200px;
     border-radius: 10px;
     color:#fff;
-    background-color: black;
+    background-color: rgb(212, 33, 57);
 }
 .name:hover{
-    background-color: purple;
+	background-color: transparent;
+    border:2px solid rgb(235, 16, 52);
+	width:100%;
 }
 .name:hover +.hd {
     height: min-content;
-    display:grid;
+    display:block;
+}
+
+.name:hover .bt{
+	color: rgb(13, 81, 230);
+	font-size: 20px;
 }
 
 .item{
 	display: flex;
 	justify-content: center;
 }
+
+.bt{
+	color: rgb(252, 252, 252);
+	background-color: transparent;
+	border: transparent;
+}
+
+.hd{
+	padding: 10px;
+	font-family: Apple Chancery ,cursive;
+}
+
 </style>
 </head>
 <body>
@@ -113,7 +132,7 @@ a:hover{
 								<form action="start/prof_ch" method="POST">
 									{% csrf_token %}
 									<input hidden type="text" name="select" value="{{prof.prof_name}}">
-									<input type="submit" value="{{prof.prof_name}}">
+									<input class="bt" type="submit" value="{{prof.prof_name}}">
 									<!-- <a href="start/prof_ch"><h2>{{prof.prof_name}}</h2></a> -->
 								</form>
 							</div>
