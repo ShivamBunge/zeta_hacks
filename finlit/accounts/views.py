@@ -76,7 +76,7 @@ def logout(request):
     return redirect("/")
 
 def advice(request):
-    return render(request, "investment.html")
+    return render(request, "advice.html")
 
 
 def prof_ch(request):
