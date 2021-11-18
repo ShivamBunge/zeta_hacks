@@ -142,12 +142,14 @@
             padding: 8px;
             border-radius: 10px;
         }
-        .but{
+
+        .but {
             background-color: #F21170;
             font-size: 20px;
             padding: 8px;
             border-radius: 10px;
         }
+
         /*------------------- Overlay---------------------- */
     </style>
 </head>
@@ -173,8 +175,8 @@
                         <li>Loan &nbsp&nbsp Rs 000</li>  -->
                         <li>Total &nbsp&nbsp Rs.{{member.income}}</li>
                     </div>
-                    
-    
+
+
                 </ul>
             </h3> <br>
             <h3 class="cursive1">You have many plans and goals for yourself and your family but you have monthly
@@ -218,11 +220,9 @@
 
             <div class="text-center ">
                 <h3 class="normal options">
-                    <form action="prof_ch/advice" method="POST">
-                        {% csrf_token %}
-                        <button class="ta open_button btn btn-dark" type="submit">Take Advice</button>
 
-                    </form>
+                    <button class="ta open_button btn btn-dark" type="submit"><a href="{% static 'advice.html' %}">Take advice</a></button>
+
                     <div class="hd">
                         <li>What are Stocks and Stock Market? </li>
                         <li>What are Mutual Funds?</li>
@@ -251,7 +251,7 @@
             <div class="text-center">
                 <form action="prof_ch/invest" method="POST">
                     {% csrf_token %}
-                    
+
                     <button class="but open_button btn btn-dark" type="submit">Invest</button>
 
                 </form>

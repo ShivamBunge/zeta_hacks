@@ -179,12 +179,9 @@ h1{
 
                 <div class="text-center ">
                     <h3 class="normal ">
-                        <form action="prof_ch/advice" method="POST">
-                            {% csrf_token %}
-                            
-                            <button class="ta open_button btn btn-dark" type="submit">Advice</button>
+                   
+                        <button class="ta open_button btn btn-dark" type="submit"><a href="{% static 'advice.html' %}">Take advice</a></button>
 
-                        </form>
                         <div class="hd options">                        
                             <li>What are Stocks and Stock Market? </li>
                             <li>What are Mutual Funds?</li>

@@ -7,6 +7,7 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from .models import Profile, portfolio
+
 # Create your views here.
 
 
@@ -75,9 +76,8 @@ def logout(request):
     auth.logout(request)
     return redirect("/")
 
-def advice(request):
-    return render(request, "advice.html")
-
+# def advice(request):
+    # return render(request, "advice.html")
 
 def prof_ch(request):
     member = Profile.objects.get(user__id=request.user.id)
@@ -193,6 +193,8 @@ def invest(request):
 inc=0
 exp=0
 
+percent=[0,0]
+
 def confirm_inv(request):
     global inc, exp
     member = Profile.objects.get(user__id=request.user.id)
@@ -228,15 +230,25 @@ def confirm_inv(request):
         prtf.fds += (prtf.fds*0.005)
         prtf.gold += (prtf.gold*0.003)
 
-        member.prof.income += (member.prof.income*0.1)
+        if member.prof.progress==1:
+            member.prof.income += (member.prof.income*0.05)
+            inc= member.prof.income
+            percent[0]=5
+        elif member.prof.progress==2:
+            member.prof.income += (member.prof.income*0.1)
+            inc= member.prof.income
+            percent[0]=10
+        elif member.prof.progress==3:
+            member.prof.income += (member.prof.income*0.15)
+            inc= member.prof.income
+            percent[0]=15
         
-        inc= member.prof.income
 
         prtf.total_prtf_val = prtf.stocks + prtf.mutual_funds + prtf.fds + prtf.gold
 
         prtf.pg_no = 2
         prtf.save()
-        return render(request,"pg2.html",{"prtf":prtf,"member":member.prof})
+        return render(request,"pg2.html",{"prtf":prtf,"member":member.prof,"percent":percent})
     elif prtf.pg_no==2:
         member.prof.income = inc
         print(member.prof.income)
@@ -266,19 +278,34 @@ def confirm_inv(request):
         prtf.mutual_funds += (prtf.mutual_funds*0.25)
         prtf.fds += (prtf.fds*0.006)
         prtf.gold += (prtf.gold*0.003)
-
-        member.prof.income += (member.prof.income*0.1)
-        member.prof.expend += (member.prof.expend*0.02)
-        
-        inc=member.prof.income
-        exp=member.prof.expend
+        if member.prof.progress==1:
+            member.prof.income += (member.prof.income*0.05)
+            member.prof.expend += (member.prof.expend*0.02)
+            inc= member.prof.income
+            percent[0]=5
+            percent[1]=2
+            exp=member.prof.expend
+        elif member.prof.progress==2:
+            member.prof.income += (member.prof.income*0.1)
+            member.prof.expend += (member.prof.expend*0.04)
+            inc= member.prof.income
+            percent[0]=10
+            percent[1]=4
+            exp=member.prof.expend
+        elif member.prof.progress==3:
+            member.prof.income += (member.prof.income*0.15)
+            member.prof.expend += (member.prof.expend*0.06)
+            inc= member.prof.income
+            percent[0]=15
+            percent[1]=6
+            exp=member.prof.expend
 
         prtf.total_prtf_val = prtf.stocks + prtf.mutual_funds + prtf.fds + prtf.gold
 
         prtf.pg_no=3
 
         prtf.save()
-        return render(request,"pg3.html",{"prtf":prtf,"member":member.prof,"mon_save":mon_save_list})
+        return render(request,"pg3.html",{"prtf":prtf,"member":member.prof,"mon_save":mon_save_list,"percent":percent})
     elif prtf.pg_no==3:
         member.prof.income = inc
         member.prof.expend = exp
@@ -309,18 +336,34 @@ def confirm_inv(request):
         prtf.mutual_funds -= (prtf.mutual_funds*0.10)
         prtf.fds += (prtf.fds*0.0045)
         prtf.gold += (prtf.gold*0.0027)
+        if member.prof.progress==1:
+            member.prof.income += (member.prof.income*0.06)
+            member.prof.expend += (member.prof.expend*0.03)
+            inc= member.prof.income
+            percent[0]=6
+            percent[1]=3
+            exp=member.prof.expend
+        elif member.prof.progress==2:
+            member.prof.income += (member.prof.income*0.12)
+            member.prof.expend += (member.prof.expend*0.05)
+            inc= member.prof.income
+            percent[0]=12
+            percent[1]=5
+            exp=member.prof.expend
+        elif member.prof.progress==3:
+            member.prof.income += (member.prof.income*0.16)
+            member.prof.expend += (member.prof.expend*0.07)
+            inc= member.prof.income
+            percent[0]=16
+            percent[1]=7
+            exp=member.prof.expend
 
-        member.prof.income += (member.prof.income*0.1)
-        member.prof.expend += (member.prof.expend*0.02)
-
-        inc=member.prof.income
-        exp=member.prof.expend
 
         prtf.total_prtf_val = prtf.stocks + prtf.mutual_funds + prtf.fds + prtf.gold
         networth= [prtf.balance + prtf. total_prtf_val]
         prtf.pg_no = 4
         prtf.save()
-        return render(request,"pg4.html",{"prtf":prtf,"member":member.prof,"nw":networth,"mon_save":mon_save_list})
+        return render(request,"pg4.html",{"prtf":prtf,"member":member.prof,"nw":networth,"mon_save":mon_save_list,"percent":percent})
     elif prtf.pg_no==4:
         member.prof.income = inc 
         member.prof.expend = exp
@@ -349,17 +392,33 @@ def confirm_inv(request):
         prtf.mutual_funds -= (prtf.mutual_funds*0.27)
         prtf.fds += (prtf.fds*0.035)
         prtf.gold += (prtf.gold*0.05)
-
-        member.prof.income += (member.prof.income*0.05)
-        member.prof.expend += (member.prof.expend*0.08)
-
-        inc=member.prof.income
-        exp=member.prof.expend
+        if member.prof.progress==1:
+            member.prof.income += (member.prof.income*0.04)
+            member.prof.expend += (member.prof.expend*0.03)
+            inc= member.prof.income
+            percent[0]=4
+            percent[1]=3
+            exp=member.prof.expend
+        elif member.prof.progress==2:
+            member.prof.income += (member.prof.income*0.14)
+            member.prof.expend += (member.prof.expend*0.06)
+            inc= member.prof.income
+            percent[0]=14
+            percent[1]=6
+            exp=member.prof.expend
+        elif member.prof.progress==3:
+            member.prof.income += (member.prof.income*0.18)
+            member.prof.expend += (member.prof.expend*0.08)
+            inc= member.prof.income
+            percent[0]=18
+            percent[1]=8
+            exp=member.prof.expend
+        
 
         prtf.total_prtf_val = prtf.stocks + prtf.mutual_funds + prtf.fds + prtf.gold
         prtf.pg_no = 5
         prtf.save()
-        return render(request,"pg5.html",{"prtf":prtf,"member":member.prof,"mon_save":mon_save_list})
+        return render(request,"pg5.html",{"prtf":prtf,"member":member.prof,"mon_save":mon_save_list,"percent":percent})
     elif prtf.pg_no==5:
         member.prof.income =inc
         member.prof.expend =exp
@@ -388,15 +447,26 @@ def confirm_inv(request):
         prtf.mutual_funds += (prtf.mutual_funds*0.29)
         prtf.fds += (prtf.fds*0.05)
         prtf.gold += (prtf.gold*0.01)
-
-        member.prof.income += (member.prof.income*0.05)
-
-        inc=member.prof.income
+        if member.prof.progress==1:
+            member.prof.income += (member.prof.income*0.06)
+            inc= member.prof.income
+            percent[0]=6
+        elif member.prof.progress==2:
+            member.prof.income += (member.prof.income*0.1)
+            inc= member.prof.income
+            percent[0]=10
+        elif member.prof.progress==3:
+            member.prof.income += (member.prof.income*0.12)
+           
+            inc= member.prof.income
+            percent[0]=12
+       
+       
  
         prtf.total_prtf_val = prtf.stocks + prtf.mutual_funds + prtf.fds + prtf.gold
         prtf.pg_no = 6
         prtf.save()
-        return render(request,"pg6.html",{"prtf":prtf,"member":member.prof,"mon_save":mon_save_list})
+        return render(request,"pg6.html",{"prtf":prtf,"member":member.prof,"mon_save":mon_save_list,"percent":percent})
     elif prtf.pg_no==6:
         networth= [prtf.balance + prtf. total_prtf_val]
         return render(request,"last.html",{"prtf":prtf,"nw":networth,"member":member.prof})

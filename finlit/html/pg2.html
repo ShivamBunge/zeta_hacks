@@ -186,10 +186,10 @@
             margin: 10px;
         }
 
-        .loan-opt{
+        .loan-opt {
             color: rgb(49, 153, 49);
             opacity: 0.8;
-            
+
         }
 
         /*-------------Overlay------------------*/
@@ -208,8 +208,10 @@
             <h3 class="cursive blue">Its been an year that you have got a job/ started working.. </h3> <br>
             <h3 class="cursive">You have started learning quite a bit about this professional and financial world </h3>
             <br>
-            <h3 class="cursive1">You also got a 10% increment in your salary. Now your monthly income is
+
+            <h3 class="cursive1">You also got a {{percent.0}}% increment in your salary. Now your monthly income is
                 {{member.income}} </h3><br>
+
             <h3 class="normal">
                 <ul>
                     <div class="open_button cursive green">Here is your Portfolio Status:</div>
@@ -226,16 +228,15 @@
             <h3 class="cursive1">Professional tax : -Rs. 80,000 </h3><br>
 
             <div class="text-center ">
-                <form action="advice" method="POST">
-                    {% csrf_token %}
-                    <!-- <input type="submit" value="advice" name="advice"> -->
-                    <button class="ta open_button btn btn-dark" type="submit">How to avoid taxes ?</button>
-                </form>
+                <!-- <input type="submit" value="advice" name="advice"> -->
+                <button class="ta open_button btn btn-dark" type="submit"><a href="{% static 'advice.html#save-tax' %}">How to avoid Taxes ?</a></button>
+
             </div>
             <br>
             <details>
                 <summary>
-                    <div class="open_button cursive1">Also since childhood you always wished to have your own car of price approx 6 lakhs.So you can:</div>
+                    <div class="open_button cursive1">Also since childhood you always wished to have your own car of
+                        price approx 6 lakhs.So you can:</div>
                 </summary>
                 <p>
                 <ul class="normal">
@@ -245,15 +246,15 @@
                 </p>
             </details>
             <div class="text-center ">
-                <form action="advice" method="POST">
-                    {% csrf_token %}
+                
                     <!-- <input type="submit" value="advice" name="advice"> -->
-                    <button class="ta open_button btn btn-dark" type="submit">Advice</button>
-                </form>
+                    <button class="ta open_button btn btn-dark" type="submit"><a href="{% static 'advice.html' %}">Take advice</a></button>
+    
             </div>
             <br>
             <h3 class="cursive blue">So you decide to buy a car now and fulfill your childhood dream.</h3>
-            <h3 class="cursive1 green">Overall you have Rs {{prtf.balance}} in your hands and you keep on adding your investments.</h3>
+            <h3 class="cursive1 green">Overall you have Rs {{prtf.balance}} in your hands and you keep on adding your
+                investments.</h3>
 
             <!-- ------------------------------------------------------------------- -->
             <div class="text-center">
@@ -270,7 +271,8 @@
                 <form action="invest" method="POST">
                     {% csrf_token %}
                     <input type="radio" name="car" value="loan">Via loan with 10% interest p.a.
-                    <input type="radio" name="car" value="savings">Via savings(then you get less amount to invest in other things like stocks,golds,etc) <br>
+                    <input type="radio" name="car" value="savings" checked>Via savings(then you get less amount to
+                    invest in other things like stocks,golds,etc) <br>
                     <button class="but open_button btn btn-dark" type="submit">Invest</button>
 
                 </form>
