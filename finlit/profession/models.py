@@ -23,6 +23,7 @@ class Profession(models.Model):
     income = models.BigIntegerField()
     expend = models.BigIntegerField()
     risk= models.IntegerField(choices=Risk.choices)
+    progress= models.IntegerField(choices=Risk.choices)
     def __str__(self):
         return f'{self.prof_name}'
     

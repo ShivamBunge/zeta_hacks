@@ -202,8 +202,8 @@
         <div class="wrapper">
             <!--text box semi transparent-->
             <h1>Dealing with negatives.</h1>
-            <h3 class="cursive blue">Everything was going good, salary got incremented as well. Your expenses also
-                increases.</h3> <br>
+            <h3 class="cursive blue">Everything was going good, salary got incremented as well by {{percent.0}}%. Your expenses also
+                increases by {{percent.1}}%.</h3> <br>
             <h2 class="cursive1 blue">But with the phase of covid-19 pandemic within a matter of few months entire world
                 got changed and of course your investments as
                 well.</h2> <br>
@@ -239,10 +239,8 @@
             </h3> <br>
             <h3 class="cursive options">What to do? </h3>
             <div class="text-center ">
-                <form action="advice" method="POST">
-                    {% csrf_token %}
-                    <button class="ta open_button btn btn-dark" type="submit">Learn about market crash.</button>
-                </form>
+                <button class="ta open_button btn btn-dark" type="submit"><a href="{% static 'advice.html#crash' %}">Learn about market crash.</a></button>
+
             </div><br>
 
             <h2 class="normal">So, you plan to buy more of your favourite stocks keeping in mind the fundamentals and
@@ -250,13 +248,7 @@
 
             <div class="text-center ">
 
-
-                <form action="advice" method="POST">
-                    {% csrf_token %}
-                    <button class="ta open_button btn btn-dark" type="submit">Advice</button>
-
-                    <!-- <input type="submit" value="advice" name="advice"> -->
-                </form>
+                <button class="ta open_button btn btn-dark" type="submit"><a href="{% static 'advice.html' %}">Take advice</a></button>
 
                 <button type="button" class="ta open_button btn btn-dark"><a
                         href="https://www.investopedia.com/fundamental-analysis-4689757">What is Fundamental

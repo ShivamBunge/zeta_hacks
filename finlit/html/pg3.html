@@ -199,16 +199,11 @@
             <h1>Wonderful!!!</h1>
             <div class="text-center ">
                 <h3 class="normal options">
-                    <form action="advice" method="POST">
-                        {% csrf_token %}
-                        <button class="ta open_button btn btn-dark" type="submit">What is inflation ?</button>
-                    </form>
+                    
+                    <button class="ta open_button btn btn-dark" type="submit"><a href="{% static 'advice.html#inf-rate' %}">What is inflation ?</a></button>
+                    
                     <div class="text-center ">
-                        <form action="advice" method="POST">
-                            {% csrf_token %}
-                            <button class="ta open_button btn btn-dark" type="submit">Take Advice</button>
-
-                        </form>
+                        <button class="ta open_button btn btn-dark" type="submit"><a href="{% static 'advice.html' %}">Take advice</a></button>
                     </div>
                     <!-- <div class="hd">                        
                         <li>What are Stocks and Stock Market? </li>
@@ -240,7 +235,7 @@
                     </div>
                 </ul>
             </h3> <br>
-            <h3 class="cursive1">Your salary has also been incremented by 10%.You check your overall savings and
+            <h3 class="cursive1">Your salary has also been incremented by {{percent.0}}%.You check your overall savings and
                 investments</h3> <br>
             <ul>
                 <h3 class="normal">

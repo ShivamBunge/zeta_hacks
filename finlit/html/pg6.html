@@ -190,10 +190,8 @@ h1{
                     </ul>
                     <div class="text-center ">
                         <h3 class="normal options">
-                            <form action="advice" method="POST">
-                                {% csrf_token %}
-                                <button class="ta open_button btn btn-dark" type="submit">What is Portfolio ?</button>
-                            </form>
+                            
+                            <button class="ta open_button btn btn-dark" type="submit"><a href="{% static 'advice.html' %}">What is portfolio ?</a>
                         <div class="hd cursive">                        
                             A portfolio is a collection of financial investments like stocks, bonds, commodities, cash, and cash equivalents, including closed-end funds
                         </div>
@@ -221,10 +219,9 @@ h1{
 
                 <div class="text-center ">
                     <h3 class="normal options">
-                        <form action="advice" method="POST">
-                            {% csrf_token %}
-                            <button class="ta open_button btn btn-dark" type="submit">Famous People</button>
-                        </form>
+                        
+                        <button class="ta open_button btn btn-dark" type="submit"><a href="{% static 'advice.html#famous' %}">Famous People</a></button>
+
                 </h3> 
                 </div><br><br>
                 <div class="text-center">

@@ -215,7 +215,7 @@
             </h3> <br>
 
             </ul>
-            <h3 class="cursive1 green">Your salary has been incremented by 10% but another organization gives you 20%
+            <h3 class="cursive1 green">Your salary has been incremented by {{percent.0}}% but another organization gives you 20%
                 increment</h3>
             <ul>
                 <h3 class="normal">
@@ -238,10 +238,7 @@
             {% endfor %}
 
             <div class="text-center">
-                <form action="advice" method="POST">
-                    {% csrf_token %}
-                    <button class="ta open_button btn btn-dark" type="submit">What is SIP</button>
-                </form>
+                <button class="ta open_button btn btn-dark" type="submit"><a href="{% static 'advice.html#sip' %}">What is SIP ?</a></button>
             </div><br><br>
 
             <h4 class="cursive red">There's a good new for you. Your parents have arranged marriage for your sister, so
@@ -251,19 +248,13 @@
             <h4 class="cursive1 green">Meanwhile you check your networth which is around Rs {{val}}.</h4>
             {% endfor %}
             <div class="text-center ">
+                <button class="ta open_button btn btn-dark" type="submit"><a href="{% static 'advice.html' %}">Take advice</a></button>
 
-                <form action="advice" method="POST">
-                    {% csrf_token %}
-                    <!-- <input type="submit" value="advice" name="advice"> -->
-                    <button class="ta open_button btn btn-dark" type="submit">Advice</button>
-
-                </form>
 
                 <h3 class="normal options">
-                    <form action="advice" method="POST">
-                        {% csrf_token %}
-                        <button class="ta open_button btn btn-dark" type="submit">What is networth ?</button>
-                    </form>
+                    
+                    <button class="ta open_button btn btn-dark" type="submit"><a href="{% static 'advice.html' %}">What is Networth ?</a></button>
+                    
                     <div class="hd cursive">
                         the total wealth of an individual, company, or household, taking account of all financial assets
                         and liabilities.
